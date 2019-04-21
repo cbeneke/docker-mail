@@ -8,7 +8,7 @@ RUN apt-get update && \
   && \
   rm -rf /etc/exim4 /var/cache/apt
 
-ADD entrypoint.sh /
+ADD ./entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
 EXPOSE 25 465 587
