@@ -2,10 +2,10 @@
 Set of plain docker containers for a mail infrastructure
 
 # exim
-You must mount the volume in /etc/exim/exim4.conf when starting this container.
+You must mount the config at /etc/exim/exim4.conf when starting this container.
 
 # dovecot
-TODO
+You must mount the configs at /etc/dovecot when starting this container.
 
 # clamav
 TODO
