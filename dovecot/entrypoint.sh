@@ -5,4 +5,4 @@ if [ ! -f /etc/dovecot/dovecot.conf ]; then
   exit 1
 fi
 
-/usr/sbin/dovecot
+/usr/sbin/dovecot -F
