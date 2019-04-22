@@ -12,7 +12,7 @@ RUN apt-get update && \
     heirloom-mailx \
   && \
   rm -rf /etc/dovecot /var/cache/apt && \
-  useradd vmail --gid vmail --no-create-home --shell /bin/nologin --home-dir /vmail
+  useradd vmail --no-create-home --shell /bin/nologin --home-dir /vmail
 
 VOLUME /vmail
 
