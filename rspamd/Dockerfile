@@ -20,8 +20,8 @@ RUN echo "deb http://rspamd.com/apt-stable/ stretch main" > /etc/apt/sources.lis
     && apt-get install -y rspamd \
     && rm -rf /var/lib/apt/lists/* \
     && echo 'type = "console";' > /etc/rspamd/override.d/logging.inc \
-    && echo 'bind_socket = "*:11333";' > /etc/rspamd/override.d/interfaces.inc \
-    && echo 'bind_socket = "*:11334";' >> /etc/rspamd/override.d/interfaces.inc \
+    && echo 'bind_socket = "*:11333";' > /etc/rspamd/override.d/worker-normal.inc \
+    && echo 'bind_socket = "*:11334";' > /etc/rspamd/override.d/worker-controller.inc \
     && echo 'pidfile = false;' > /etc/rspamd/override.d/options.inc
 
 VOLUME [ "/var/lib/rspamd" ]
