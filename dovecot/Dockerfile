@@ -13,10 +13,10 @@ RUN apt-get update \
     && rm -rf /etc/dovecot /var/lib/apt/lists/*
     && useradd vmail --no-create-home --shell /bin/nologin --home-dir /vmail
 
-VOLUME /vmail
+VOLUME [ "/vmail" ]
 
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
-EXPOSE 143 993 4190
 ENTRYPOINT ["/entrypoint.sh"]
+EXPOSE 143 993 4190

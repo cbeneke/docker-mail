@@ -11,5 +11,5 @@ RUN apt-get update \
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
-EXPOSE 25 465 587
 ENTRYPOINT ["/entrypoint.sh"]
+EXPOSE 25 465 587
