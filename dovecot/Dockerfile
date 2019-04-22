@@ -11,7 +11,10 @@ RUN apt-get update && \
     swaks \
     heirloom-mailx \
   && \
-  rm -rf /etc/dovecot /var/cache/apt
+  rm -rf /etc/dovecot /var/cache/apt && \
+  useradd vmail --gid vmail --no-create-home --shell /bin/nologin --home-dir /vmail
+
+VOLUME /vmail
 
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
