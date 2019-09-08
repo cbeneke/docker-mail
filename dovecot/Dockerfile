@@ -10,7 +10,7 @@ RUN apt-get update \
         dovecot-managesieved=1:2.3.4.1-5+deb10u1 \
         swaks=20181104.0-2 \
         s-nail=14.9.11-2 \
-    && rm -rf /etc/dovecot /var/lib/apt/lists/*
+    && rm -rf /etc/dovecot /var/lib/apt/lists/* \
     && useradd vmail --no-create-home --shell /bin/nologin --home-dir /vmail
 
 VOLUME [ "/vmail" ]
