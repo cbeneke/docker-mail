@@ -7,6 +7,7 @@ RUN apt-get update \
         s-nail=14.9.11-2 \
         ca-certificates=20190110 \
     && rm -rf /etc/exim4 /var/lib/apt/lists/* \
+    && mkdir -p /var/log/exim \
     && ln -s /dev/stdout /var/log/exim/mainlog \
     && ln -s /dev/stderr /var/log/exim/rejectlog
 
