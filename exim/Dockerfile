@@ -7,8 +7,8 @@ RUN apt-get update \
         s-nail=14.9.11-2 \
         ca-certificates=20190110 \
     && rm -rf /etc/exim4 /var/lib/apt/lists/* \
-    && ln -s /var/log/exim/mainlog /dev/stdout \
-    && ln -s /var/log/exim/rejectlog /dev/stderr
+    && ln -s /dev/stdout /var/log/exim/mainlog \
+    && ln -s /dev/stderr /var/log/exim/rejectlog
 
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
