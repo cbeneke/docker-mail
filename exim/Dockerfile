@@ -9,7 +9,7 @@ RUN apt-get update \
     && rm -rf /etc/exim4 /var/lib/apt/lists/* \
     && ln -s /dev/stdout /var/log/exim4/mainlog \
     && ln -s /dev/stderr /var/log/exim4/rejectlog \
-    && chown Debian-exim:adm /var/log/exim4/mainlog /var/log/exim4/rejectlog
+    && chown -h Debian-exim:adm /var/log/exim4/mainlog /var/log/exim4/rejectlog
 
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
