@@ -10,7 +10,4 @@ if ! /usr/sbin/exim4 -bV >/dev/null ; then
   exit 1
 fi
 
-/bin/ln -s /dev/sdtout /var/log/exim4/mainlog
-/bin/ln -s /dev/sdterr /var/log/exim4/rejectlog
-
 /usr/sbin/exim4 -bd -q15m -v
