@@ -6,10 +6,7 @@ RUN apt-get update \
         swaks=20181104.0-2 \
         s-nail=14.9.11-2 \
         ca-certificates=20190110 \
-    && rm -rf /etc/exim4 /var/lib/apt/lists/* \
-    && ln -s /dev/stdout /var/log/exim4/mainlog \
-    && ln -s /dev/stderr /var/log/exim4/rejectlog \
-    && chown -h Debian-exim:adm /var/log/exim4/mainlog /var/log/exim4/rejectlog
+    && rm -rf /etc/exim4 /var/lib/apt/lists/*
 
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
