@@ -17,7 +17,7 @@ RUN set -x \
 
 RUN echo "deb http://rspamd.com/apt-stable/ buster main" > /etc/apt/sources.list.d/rspamd.list \
     && apt-get update \
-    && apt-get install -y rspamd=2.1-1~buster \
+    && apt-get install -y rspamd=2.2-1~buster \
     && rm -rf /var/lib/apt/lists/* \
     && echo 'type = "console";' > /etc/rspamd/override.d/logging.inc \
     && echo 'bind_socket = "*:11333";' > /etc/rspamd/override.d/worker-normal.inc \
