@@ -17,7 +17,7 @@ RUN set -x \
 
 RUN echo "deb http://rspamd.com/apt-stable/ bullseye main" > /etc/apt/sources.list.d/rspamd.list \
     && apt-get update \
-    && apt-get install -y rspamd=2.2-1~bullseye \
+    && apt-get install -y rspamd=3.0-2~bullseye \
     && rm -rf /var/lib/apt/lists/* \
     && echo 'type = "console";' > /etc/rspamd/override.d/logging.inc \
     && echo 'bind_socket = "*:11333";' > /etc/rspamd/override.d/worker-normal.inc \
