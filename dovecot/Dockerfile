@@ -1,15 +1,15 @@
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        ca-certificates=20190110 \
-        dovecot-core=1:2.3.4.1-5+deb10u1 \
-        dovecot-imapd=1:2.3.4.1-5+deb10u1 \
-        dovecot-ldap=1:2.3.4.1-5+deb10u1 \
-        dovecot-lmtpd=1:2.3.4.1-5+deb10u1 \
-        dovecot-managesieved=1:2.3.4.1-5+deb10u1 \
-        swaks=20181104.0-2 \
-        s-nail=14.9.11-2 \
+        ca-certificates=20210119 \
+        dovecot-core=1:2.3.13+dfsg1-2 \
+        dovecot-imapd=1:2.3.13+dfsg1-2 \
+        dovecot-ldap=1:2.3.13+dfsg1-2 \
+        dovecot-lmtpd=1:2.3.13+dfsg1-2 \
+        dovecot-managesieved=1:2.3.13+dfsg1-2 \
+        swaks=20201014.0-1 \
+        s-nail=14.9.22-1 \
     && rm -rf /etc/dovecot /var/lib/apt/lists/* \
     && useradd vmail --no-create-home --shell /bin/nologin --home-dir /vmail
 

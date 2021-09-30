@@ -1,9 +1,9 @@
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        gnupg=2.2.12-1+deb10u1 \
-        dirmngr=2.2.12-1+deb10u1 \
+        gnupg=2.2.27-2 \
+        dirmngr=2.2.27-2 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN set -x \
@@ -15,9 +15,9 @@ RUN set -x \
     && rm -rf "$GNUPGHOME" \
     && apt-key list > /dev/null
 
-RUN echo "deb http://rspamd.com/apt-stable/ buster main" > /etc/apt/sources.list.d/rspamd.list \
+RUN echo "deb http://rspamd.com/apt-stable/ bullseye main" > /etc/apt/sources.list.d/rspamd.list \
     && apt-get update \
-    && apt-get install -y rspamd=2.2-1~buster \
+    && apt-get install -y rspamd=2.2-1~bullseye \
     && rm -rf /var/lib/apt/lists/* \
     && echo 'type = "console";' > /etc/rspamd/override.d/logging.inc \
     && echo 'bind_socket = "*:11333";' > /etc/rspamd/override.d/worker-normal.inc \

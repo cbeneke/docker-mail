@@ -1,11 +1,11 @@
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        exim4-daemon-heavy=4.92-8+deb10u3 \
-        swaks=20181104.0-2 \
-        s-nail=14.9.11-2 \
-        ca-certificates=20190110 \
+        ca-certificates=20210119 \
+        exim4-daemon-heavy=4.94.2-7 \
+        swaks=20201014.0-1 \
+        s-nail=14.9.22-1 \
     && rm -rf /etc/exim4 /var/lib/apt/lists/*
 
 ADD entrypoint.sh /
